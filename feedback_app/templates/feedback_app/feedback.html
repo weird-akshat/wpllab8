@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+
+<body>
+    <h2>Feedback Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            {{ form.name.label_tag }}<br>
+            {{ form.name }}
+            {{ form.name.errors }}
+        </p>
+        <p>
+            {{ form.email.label_tag }}<br>
+            {{ form.email }}
+            {{ form.email.errors }}
+        </p>
+        <p>
+            {{ form.mobile.label_tag }}<br>
+            {{ form.mobile }}
+            {{ form.mobile.errors }}
+        </p>
+        <p>
+            {{ form.course.label_tag }}<br>
+            {{ form.course }}
+            {{ form.course.errors }}
+        </p>
+        <p>
+            {{ form.comments.label_tag }}<br>
+            {{ form.comments }}
+        </p>
+        <button type="submit">Submit Form</button>
+    </form>
+    <p><a href="/">Back to Home</a></p>
+</body>
+
+</html>

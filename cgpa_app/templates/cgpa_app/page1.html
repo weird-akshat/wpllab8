@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Page 1</title>
+</head>
+
+<body>
+    <h2>Page 1</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            {{ form.name.label_tag }}<br>
+            {{ form.name }}
+            {{ form.name.errors }}
+        </p>
+        <p>
+            {{ form.total_marks.label_tag }}<br>
+            {{ form.total_marks }}
+            {{ form.total_marks.errors }}
+        </p>
+        <button type="submit">Calculate</button>
+    </form>
+    <p><a href="/">Back to Home</a></p>
+</body>
+
+</html>

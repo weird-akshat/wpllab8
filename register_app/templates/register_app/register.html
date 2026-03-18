@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 520px;
+            margin: 30px auto;
+        }
+
+        .row {
+            margin: 12px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .errorlist {
+            color: #b91c1c;
+            margin: 4px 0;
+        }
+
+        button {
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Register Page</h2>
+    <p>Username is required. Other fields are optional.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {{ form.username.errors }}
+        </div>
+
+        <div class="row">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+
+        <div class="row">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+
+        <div class="row">
+            {{ form.contact_number.label_tag }}
+            {{ form.contact_number }}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+
+</html>

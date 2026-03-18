@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produce Bill</title>
+</head>
+
+<body>
+    <h2>Order Page</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <p><strong>Select Brand</strong></p>
+        {{ form.brand }}
+        {{ form.brand.errors }}
+
+        <p><strong>Select Item(s)</strong></p>
+        {{ form.items }}
+        {{ form.items.errors }}
+
+        <p>
+            {{ form.quantity.label_tag }}<br>
+            {{ form.quantity }}
+            {{ form.quantity.errors }}
+        </p>
+
+        <button type="submit">Produce Bill</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+
+</html>

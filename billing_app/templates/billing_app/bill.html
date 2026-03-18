@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Bill Page</h2>
+    <p><strong>Selected Brand:</strong> {{ bill.brand }}</p>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        {% for row in bill.rows %}
+        <tr>
+            <td>{{ row.item }}</td>
+            <td>{{ row.rate }}</td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.amount }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3"><strong>Total</strong></td>
+            <td><strong>{{ bill.total }}</strong></td>
+        </tr>
+    </table>
+
+    <p><a href="/billing/">Back to Order</a></p>
+</body>
+
+</html>

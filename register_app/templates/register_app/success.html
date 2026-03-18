@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Success</title>
+</head>
+
+<body>
+    <h2>Success Page</h2>
+    <h3>Welcome {{ data.username }}</h3>
+    <p>Email: {{ data.email|default:"-" }}</p>
+    <p>Contact Number: {{ data.contact_number|default:"-" }}</p>
+    <p><a href="/register/">Back to Register</a></p>
+</body>
+
+</html>
